@@ -10,11 +10,23 @@ const PostSchema = new mongoose.Schema({
     trim: true,
     required: true,
   },
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true,
   },
+  comments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Comment',
+      required: true,
+    },
+  ],
   likesCount: {
     type: Number,
     required: true,
