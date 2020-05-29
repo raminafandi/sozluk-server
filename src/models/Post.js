@@ -12,7 +12,7 @@ const PostSchema = new mongoose.Schema({
   },
   category: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'Category',
     required: true,
   },
   user: {
@@ -24,12 +24,12 @@ const PostSchema = new mongoose.Schema({
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Comment',
-      required: true,
     },
   ],
   likesCount: {
     type: Number,
     required: true,
+    default: 0,
   },
   created: {
     type: Date,
